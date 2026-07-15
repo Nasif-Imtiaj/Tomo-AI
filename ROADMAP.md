@@ -156,3 +156,4 @@ README with architecture diagram, the AlarmManager-vs-WorkManager rationale, the
 - Original product plan: `local-task-agent-plan.md`
 - This roadmap: `ROADMAP.md`
 - Claude Code project instructions: `CLAUDE.md`
+- Learning resources for every technology above: `LEARNING_RESOURCES.md`
