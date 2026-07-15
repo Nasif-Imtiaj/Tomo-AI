@@ -146,7 +146,7 @@ README with architecture diagram, the AlarmManager-vs-WorkManager rationale, the
 |---|---|
 | Exact-alarm permission denied or revoked mid-use | Graceful degradation to an inexact `WorkManager`-scheduled notification, with a visible in-app banner explaining reduced precision, rather than a silently-missed reminder. |
 | LLM misparses relative dates ("next Tuesday" across a DST boundary, "in two weeks") | Always pass current date/time *and* timezone in the system prompt; log parse failures locally (never remotely, to avoid shipping user task text off-device) during Week 4 testing to build the phrasing test set. |
-Highest-SDK targeting (37) surfaces new runtime behavior changes before the ecosystem (some libraries, Play policies) has fully caught up | Read the Android 17 behavior-change docs before Week 1 coding starts; keep an eye on whether AndroidX library majors have caught up to compileSdk 37 when pinning versions, and be ready to hold at compileSdk 36 for a specific dependency if one hasn't shipped support yet. |
+| Highest-SDK targeting (37) surfaces new runtime behavior changes before the ecosystem (some libraries, Play policies) has fully caught up | Read the Android 17 behavior-change docs before Week 1 coding starts; keep an eye on whether AndroidX library majors have caught up to compileSdk 37 when pinning versions, and be ready to hold at compileSdk 36 for a specific dependency if one hasn't shipped support yet. |
 | Scope creep into v2 features before v1 is solid | The Week 5 "done when" criteria is the gate — v2 work doesn't start until unit/UI test suite is green and every screen has defined empty/error states. |
 
 ---
