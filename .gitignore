@@ -34,19 +34,11 @@ captures/
 *.apk
 output.json
 
-# IntelliJ
+# IntelliJ / Android Studio — exclude the whole project-local config dir.
+# It's all machine-specific (SDK paths, run configs, indexing state) and
+# regenerates automatically when the project is opened.
 *.iml
-.idea/caches/
-.idea/libraries/
-.idea/modules.xml
-.idea/workspace.xml
-.idea/navEditor.xml
-.idea/assetWizardSettings.xml
-.idea/dictionaries/
-.idea/deploymentTargetDropDown.xml
-.idea/gradle.xml
-.idea/misc.xml
-.idea/kotlinc.xml
+.idea/
 
 # Keystore files
 *.jks
