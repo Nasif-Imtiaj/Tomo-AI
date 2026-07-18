@@ -59,6 +59,18 @@ com.nidev.tomoai/
 - CI (GitHub Actions) must be green before merging to `main`.
 - Don't start v2 features (NL queries, voice input, widget) until the Week 5 gate in `ROADMAP.md` §5 is met: full test suite green, every screen has defined empty/loading/error states.
 
+## Collaboration workflow (author-reviewed, branch-per-task)
+
+These rules govern how every task gets worked on, not just how the code is written. They apply starting now, to every issue in the tracker.
+
+- **Branch per task.** Every issue gets its own branch off `main`: `task/<issue-number>-<short-slug>` (e.g. `task/1-bump-sdk-37`). Never commit directly to `main`.
+- **Decompose before starting.** If an issue is big enough that reviewing the diff in one pass would be a slog, split it into smaller sub-issues first — each sub-issue gets its own branch and its own PR. A PR should be small enough to actually review, not a dump of a whole milestone.
+- **Every issue needs a problem statement and an intended solution, written before code is written.** Not after the fact as documentation — the approach gets written down first, so the author can weigh in on the plan before implementation time is spent on it. Use the issue template (`.github/ISSUE_TEMPLATE/task.md`).
+- **Every PR targets `main`**, describes what changed and why, links its issue (`Closes #N`), and uses the PR template (`.github/PULL_REQUEST_TEMPLATE.md`).
+- **Nothing merges without the author's explicit sign-off.** Claude opens PRs but never merges them. Merging is Nasif's call, always — the checklist in the PR template exists so that check is concrete, not a vibe.
+- **Learn-before-implement gate.** Before starting any task that touches a topic Nasif hasn't worked with yet, stop and point to the relevant section of `LEARNING_RESOURCES.md` (or other reading) instead of writing code. Wait for explicit confirmation that it's been read and understood before proceeding — the goal is that every implementation is something the author can actually review line by line, not a black box handed over finished.
+- **End-of-day logging happens on the issue, not in a separate log file.** At the end of a work session, comment on every issue touched that day with what was done, decisions made, and what's left. The issue thread is the devlog.
+
 ## Current status
 
 Foundation stage — Week 1 of the roadmap. Gradle skeleton exists (`com.nidev.tomoai`, AGP 9.0.1) but Compose/Hilt/Room are not yet wired in. See `ROADMAP.md` §3 for the exact Week 1 setup checklist. Update this section as milestones complete.
